@@ -15,6 +15,10 @@ Our final pipeline is organized into two main stages:
 1. **Mapping stage** using **RTAB-Map** with RGB-D, point cloud, and filtered odometry inputs.
 2. **Navigation stage** using **AMCL + move_base + DWA**, together with custom task-execution scripts for floor-1 scanning, dynamic obstacle handling, and floor-2 room selection.
 
+## Demo Video
+
+[Watch the demo video](./src/me5413_world/video/demo.mp4)
+
 ---
 
 ## 2. Implemented System
