@@ -2,7 +2,7 @@
 
 Autonomous mapping and navigation system for the NUS ME5413 final project using a Clearpath Jackal mobile robot in Gazebo.
 
-> **Group Members:** Huang Ruiqi, Jin Feiyi, Li YOu, Xiao Jinyang
+> **Group Members:** Huang Ruiqi, Jin Feiyi, Li You, Xiao Jinyang
 
 ---
 
