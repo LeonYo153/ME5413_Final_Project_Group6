@@ -2,9 +2,7 @@
 
 Autonomous mapping and navigation system for the NUS ME5413 final project using a Clearpath Jackal mobile robot in Gazebo.
 
-> Replace the names below with your actual group members before publishing.
->
-> **Group Members:** Member A, Member B, Member C
+> **Group Members:** Huang Ruiqi, Jin Feiyi, Li YOu, Xiao Jinyang
 
 ---
 
@@ -274,31 +272,8 @@ src/me5413_world/maps/
 
 ---
 
-## 10. GitHub Submission Notes
 
-Before submission, make sure the repository includes:
-
-- Source code
-- Final `README.md`
-- Saved map files
-- Report PDF
-- Presentation slides
-- Demo video or link to the demo asset if stored externally
-
-It is also recommended to keep commit history clean and descriptive, for example:
-
-```text
-Add RTAB-Map mapping pipeline
-Tune local/global costmaps for ramp and corridor navigation
-Implement floor-1 automatic box counting
-Add dynamic obstacle predictor for moving person avoidance
-Implement floor-2 room selection logic
-Finalize README and submission assets
-```
-
----
-
-## 11. Acknowledgements
+## 10. Acknowledgements
 
 This project is based on the ME5413 final project simulation framework and extends it with a custom mapping and autonomous navigation pipeline.
 
