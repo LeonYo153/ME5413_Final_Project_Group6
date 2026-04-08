@@ -1,0 +1,23 @@
+transform_tolerance: 0.5
+
+obstacle_range: 4.0
+raytrace_range: 5.0
+
+footprint: [[0.26, 0.21], [0.26, -0.21], [-0.26, -0.21], [-0.26, 0.21]]
+
+inflation_radius: 0.55
+cost_scaling_factor: 3.0
+
+map_type: costmap
+
+observation_sources: front_scan
+
+front_scan:
+  sensor_frame: front_laser
+  data_type: LaserScan
+  topic: /front/scan
+  marking: true
+  clearing: true
+  inf_is_valid: true
+  observation_persistence: 0.0
+  expected_update_rate: 0.0

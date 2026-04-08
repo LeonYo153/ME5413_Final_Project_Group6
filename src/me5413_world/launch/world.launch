@@ -12,21 +12,21 @@
         <arg name="headless" value="false"/>
     </include>
 
-    <!-- Add our jackal robot into the simulation -->
-    <include file="$(find me5413_world)/launch/include/spawn_jackal.launch"/>
+    <!-- Spawn Jackal with 3D lidar + front RGB-D camera -->
+    <include file="$(find me5413_world)/launch/include/spawn_jackal.launch">
+        <arg name="config" value="rtabmap_rgbd"/>
+    </include>
 
-
-    <param name="planar_box_description" 
+    <param name="planar_box_description"
             command="$(find xacro)/xacro --inorder '$(find me5413_world)/launch/include/planar_box.urdf.xacro'" />
-    
-    <!-- comment the following out if you do not want the big red obstacle for mapping etc-->
+
+    <!-- Comment this out if you want a cleaner mapping run -->
     <node name="spawn_box" pkg="gazebo_ros" type="spawn_model" output="screen"
-            args="-urdf 
-                -param planar_box_description 
-                -model planar_box 
+            args="-urdf
+                -param planar_box_description
+                -model planar_box
                 -x 6.0 -y 0.0 -z 3.5" />
-    
+
     <!-- Load the destination configuration -->
     <rosparam command="load" file="$(find me5413_world)/config/config.yaml" />
-
 </launch>

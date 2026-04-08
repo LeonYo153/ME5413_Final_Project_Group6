@@ -1,0 +1,3 @@
+JACKAL_LASER=1
+JACKAL_LASER_3D=1
+JACKAL_URDF_EXTRAS=$(rospack find jackal_description)/urdf/front_rgbd_camera.urdf.xacro

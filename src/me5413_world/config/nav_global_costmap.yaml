@@ -1,0 +1,42 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  transform_tolerance: 0.5
+
+  update_frequency: 2.0
+  publish_frequency: 1.0
+
+  static_map: true
+  rolling_window: false
+
+  track_unknown_space: true
+  unknown_cost_value: 255
+
+  plugins:
+    - {name: static_layer, type: "costmap_2d::StaticLayer"}
+    - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+    - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+
+  static_layer:
+    track_unknown_space: true
+
+  obstacle_layer:
+    observation_sources: front_scan blocked_gap_cloud
+    front_scan:
+      data_type: LaserScan
+      topic: /front/scan
+      marking: true
+      clearing: true
+      inf_is_valid: true
+    blocked_gap_cloud:
+      data_type: PointCloud2
+      topic: /me5413_world/blocked_gap_cloud
+      marking: true
+      clearing: false
+      obstacle_range: 8.0
+      observation_persistence: 10.0
+      expected_update_rate: 0.0
+
+  inflation_layer:
+    inflation_radius: 2.0
+    cost_scaling_factor: 3.00

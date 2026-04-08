@@ -1,0 +1,59 @@
+map_frame: map
+base_frame: base_link
+camera_frame: front_rgbd_optical_frame
+
+image_topic: /front_rgbd/rgb/image_raw
+depth_topic: /front_rgbd/depth/image_raw
+camera_info_topic: /front_rgbd/rgb/camera_info
+global_plan_topic: /move_base/NavfnROS/plan
+
+process_every_n_frames: 3
+
+binary_threshold: 95
+template_corr_threshold: 0.40
+template_shape_threshold: 0.75
+
+dedup_radius: 0.90
+min_confirm_hits: 2
+
+min_depth: 0.45
+max_depth: 5.50
+
+goal_timeout: 75.0
+goal_retries: 2
+dwell_time: 0
+path_publish_period: 0.50
+
+default_lane_spacing: 2.0
+goal_margin_x: 0.5
+goal_margin_y: 0.5
+
+result_file: ~/.ros/me5413_floor1_counts.json
+
+initialpose_topic: /initialpose
+start_topic: /me5413_world/start_floor1_scan
+start_on_initialpose: false
+spawn_topic: /rviz_panel/respawn_objects
+spawn_value: 1
+start_on_spawn: true
+spawn_settle_time: 4.0
+initialpose_settle_time: 2.0
+pose_wait_timeout: 30.0
+
+scan_regions:
+  - name: floor1_rect_1
+    lane_spacing: 2.0
+    corners:
+      - {x: 3.3086471558, y: -1.6212404966}
+      - {x: 3.3086471558, y: 16.8961372375}
+      - {x: 11.1797428131, y: 16.8961372375}
+      - {x: 11.1797428131, y: -1.6212404966}
+
+  - name: floor1_rect_2
+    lane_spacing: 2.0
+    mirror_start_side: true
+    corners:
+      - {x: 13.8325986862, y: -1.6482056379}
+      - {x: 13.8325986862, y: 16.8961372375}
+      - {x: 22.3799285889, y: 16.8961372375}
+      - {x: 22.3799285889, y: -1.6482056379}

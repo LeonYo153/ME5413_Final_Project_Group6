@@ -1,0 +1,102 @@
+map_frame: map
+image_topic: /front_rgbd/rgb/image_raw
+scan_topic: /front/scan
+scan_status_topic: /me5413_world/scan_status
+door_topic: /cmd_unblock
+
+counts_file: ~/.ros/me5413_floor1_counts.json
+result_file: ~/.ros/me5413_floor2_result.json
+
+goal_timeout: 90.0
+observe_duration: 2.5
+observe_retry: 2
+observe_stabilize: 1.0
+post_arrival_wait: 0.0
+
+open_door_publish_times: 5
+open_door_publish_interval: 0.15
+
+room_count: 4
+room_pitch_y: 5.0
+room_index_start: 1
+room_y_direction: 1
+
+binary_threshold: 95
+template_corr_threshold: 0.40
+template_shape_threshold: 0.75
+min_contour_area: 120.0
+max_contour_area: 14000.0
+
+door_wait_pose:
+  x: 7.385
+  y: -1.126
+  yaw: -1.396
+
+ramp_waypoints:
+  - name: ramp_1
+    x: 29.167
+    y: -3.137
+    yaw: 0.000
+
+  - name: ramp_2
+    x: 36.378
+    y: -3.137
+    yaw: 0.000
+
+  - name: ramp_top
+    x: 41.924
+    y: 16.5
+    yaw: 1.530
+
+gap_probe_pose:
+  x: 38.396
+  y: 7.612
+  yaw: -3.056
+
+left_gap_center:
+  x: 35.340
+  y: 2.546
+
+right_gap_center:
+  x: 35.340
+  y: 12.698
+
+gap_check_radius: 0.45
+gap_blocked_min_points: 4
+gap_vote_cycles: 8
+gap_vote_sleep: 0.08
+gap_open_fallback: right
+
+blocked_gap_half_depth: 0.10
+blocked_gap_half_width: 0.45
+blocked_gap_point_step: 0.05
+
+left_gap_route:
+  - name: left_gap_pre
+    x: 36.560
+    y: 2.546
+    yaw: -3.056
+  - name: left_gap_pass
+    x: 34.260
+    y: 2.546
+    yaw: -3.056
+
+right_gap_route:
+  - name: right_gap_pre
+    x: 36.560
+    y: 12.698
+    yaw: -3.056
+  - name: right_gap_pass
+    x: 34.260
+    y: 12.698
+    yaw: -3.056
+
+view_anchor:
+  x: 30.500
+  y: 0.000
+  yaw: -3.056
+
+entry_anchor:
+  x: 27.0
+  y: 0.000
+  yaw: -3.056

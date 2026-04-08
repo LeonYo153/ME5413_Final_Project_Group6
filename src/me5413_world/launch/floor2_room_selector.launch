@@ -1,0 +1,10 @@
+<launch>
+  <rosparam command="load"
+            file="$(find me5413_world)/config/floor2_room_selector.yaml"
+            ns="floor2_room_selector"/>
+
+  <node pkg="me5413_world"
+        type="floor2_room_selector.py"
+        name="floor2_room_selector"
+        output="screen" />
+</launch>

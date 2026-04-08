@@ -8,11 +8,15 @@ add_compile_options(-std=c++11)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  actionlib
+  actionlib_msgs
+  geometry_msgs
+  move_base_msgs
+  nav_msgs
   roscpp
   rospy
+  sensor_msgs
   std_msgs
-  nav_msgs
-  geometry_msgs
   visualization_msgs
   tf2
   tf2_ros
@@ -45,3 +49,9 @@ add_dependencies(goal_publisher_node ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME
 
 add_library(object_spawner_gz_plugin SHARED src/object_spawner_gz_plugin.cpp)
 target_link_libraries(object_spawner_gz_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+catkin_install_python(PROGRAMS
+  scripts/floor1_auto_scan.py
+  scripts/floor2_room_selector.py
+  scripts/dynamic_obstacle_predictor.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)

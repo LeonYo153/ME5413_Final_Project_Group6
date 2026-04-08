@@ -1,0 +1,25 @@
+dynamic_obstacle_predictor:
+  map_frame: map
+  scan_topic: /front/scan
+  map_topic: /map
+  predicted_cloud_topic: /me5413_world/predicted_obstacle_cloud
+  marker_topic: /me5413_world/dynamic_obstacle_markers
+
+  cluster_tolerance: 0.35
+  min_cluster_points: 3
+  track_match_distance: 0.90
+  track_timeout: 1.0
+  min_track_hits: 2
+
+  prediction_horizon: 1.2
+  prediction_dt: 0.2
+  default_radius: 0.30
+  safety_margin: 0.18
+  min_speed_for_prediction: 0.22
+
+  min_range: 0.10
+  max_range: 5.0
+  static_occ_threshold: 50
+  static_filter_radius: 0.18
+  cloud_disc_step: 0.12
+  marker_lifetime: 0.4
