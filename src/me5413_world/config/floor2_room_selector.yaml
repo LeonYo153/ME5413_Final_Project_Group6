@@ -61,8 +61,8 @@ right_gap_center:
   x: 35.340
   y: 12.698
 
-gap_check_radius: 0.45
-gap_blocked_min_points: 4
+gap_check_radius: 0.55
+gap_blocked_min_points: 3
 gap_vote_cycles: 8
 gap_vote_sleep: 0.08
 gap_open_fallback: right
