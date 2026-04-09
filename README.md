@@ -12,7 +12,9 @@ This repository contains our final implementation for the ME5413 Autonomous Mobi
 
 Our final pipeline is organized into two main stages:
 
-1. **Mapping stage** using **RTAB-Map** with RGB-D, point cloud, and filtered odometry inputs.
+1. **Mapping stage** using 
+- **Cartographer 2D** with RGB-D, 2D Laser, imu, odometry, landmarks inputs.（We uploaded thecode, but due to version and installation issues, it will not be used）
+- **RTAB-Map** with RGB-D, point cloud, and filtered odometry inputs.
 2. **Navigation stage** using **AMCL + move_base + DWA**, together with custom task-execution scripts for floor-1 scanning, dynamic obstacle handling, and floor-2 room selection.
 
 ## Demo Video
@@ -25,7 +27,8 @@ Our final pipeline is organized into two main stages:
 
 ### 2.1 Mapping
 
-We use **RTAB-Map** as the SLAM backend for map building.
+
+For **RTAB-Map** as the SLAM backend for map building:
 
 **Sensor inputs used in mapping:**
 - RGB image: `/front_rgbd/rgb/image_raw`
@@ -41,10 +44,25 @@ We use **RTAB-Map** as the SLAM backend for map building.
 - Robust graph optimization
 - Parameters adjusted for ramp/slope handling
 
-The mapping launch file is:
+The RTAB-Map mapping launch file is:
 
 ```bash
 roslaunch me5413_world mapping.launch
+```
+
+
+For **Cartographer 2D** as the SLAM backend for map building:(can't use in this version of package)
+**Sensor inputs used in mapping:**
+- 2D LiDAR Scans: `/front/scan`
+- RGB image: `/front_rgbd/rgb/image_raw`
+- IMU Data: `/imu/data`
+- Filtered Odometry: `/odometry/filtered`
+- AprilTag Landmarks: `/landmarks`
+
+The Cartographer 2D launch file is:
+
+```bash
+roslaunch me5413_world cartographer.launch
 ```
 
 ### 2.2 Navigation
