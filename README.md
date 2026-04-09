@@ -52,6 +52,7 @@ roslaunch me5413_world mapping.launch
 
 
 For **Cartographer 2D** as the SLAM backend for map building:(can't use in this version of package)
+
 **Sensor inputs used in mapping:**
 - 2D LiDAR Scans: `/front/scan`
 - RGB image: `/front_rgbd/rgb/image_raw`
